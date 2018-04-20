@@ -1,0 +1,12 @@
+Language: C
+Description: Multi-threaded Client/Server Socket Programs over UDP
+			 Client generates simultaneous multithreaded requests for files by declaring a "chunk" number file name using custom protocol header.
+			 Server listens for client requests and processes protocol header by opening designated file and seeking to appropriate chunk.
+			 All socket communications over UDP.
+
+myclient.c: Client program that generates multithreaded requests in the form of file names and chunk numbers which sent to the server over UDP.
+
+myserver.c: Server program that binds listening socket, accepts requests from client program in the form of file names and chunk numbers 
+			Returns the parts of the requested files back to the client.
+myunp.c: Wrapper functions for C POSIX socketlibrary
+myunp.h: Header for wrapper functions in myunp.c
